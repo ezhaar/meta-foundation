@@ -5,7 +5,7 @@ Conflicts=umount.target
 After=local-fs.target
 
 [Service]
-ExecStartPre=@BASE_BINDIR@/mkdir -p @LOCALSTATEDIR@/lib/aziot
+ExecStartPre=@BASE_BINDIR@/setup_aziot_dirs.sh
 ExecStart=@BASE_BINDIR@/mount -o bind @LOCALSTATEDIR@/local/lib/aziot @LOCALSTATEDIR@/lib/aziot
 RemainAfterExit=yes
 

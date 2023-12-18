@@ -1,0 +1,13 @@
+[Unit]
+Description=IoTEdge home mount @LOCALSTATEDIR@/local/lib/aziot -> @LOCALSTATEDIR@/lib/aziot.
+DefaultDependencies=no
+Conflicts=umount.target
+After=local-fs.target
+
+[Service]
+ExecStartPre=@BASE_BINDIR@/mkdir -p @LOCALSTATEDIR@/lib/aziot
+ExecStart=@BASE_BINDIR@/mount -o bind @LOCALSTATEDIR@/local/lib/aziot @LOCALSTATEDIR@/lib/aziot
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

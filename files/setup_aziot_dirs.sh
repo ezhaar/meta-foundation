@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 VARLIB_DIR=${VARLOCAL_DIR}/aziot
 VARLOCAL_DIR=/var/local/lib/aziot
 mkdir -p ${VARLIB_DIR}

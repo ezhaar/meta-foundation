@@ -1,12 +1,12 @@
 [Unit]
-Description=IoTEdge home mount @LOCALSTATEDIR@/local/lib/aziot -> @LOCALSTATEDIR@/lib/aziot.
+Description=IoTEdge home mount /var/local/lib/aziot -> /var/lib/aziot.
 DefaultDependencies=no
 Conflicts=umount.target
 After=local-fs.target
 
 [Service]
-ExecStartPre=@BASE_BINDIR@/setup_aziot_dirs.sh
-ExecStart=@BASE_BINDIR@/mount -o bind @LOCALSTATEDIR@/local/lib/aziot @LOCALSTATEDIR@/lib/aziot
+ExecStartPre=/usr/bin/setup_aziot_dirs.sh
+ExecStart=/usr/bin/mount -o bind /var/local/lib/aziot /var/lib/aziot
 RemainAfterExit=yes
 
 [Install]

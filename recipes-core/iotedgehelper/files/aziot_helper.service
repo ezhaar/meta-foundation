@@ -5,8 +5,7 @@ Conflicts=umount.target
 After=local-fs.target
 
 [Service]
-ExecStartPre=/usr/bin/setup_aziot_dirs.sh
-ExecStart=/usr/bin/mount -o bind /var/local/lib/aziot /var/lib/aziot
+ExecStart=/usr/bin/setup_aziot_dirs.sh
 RemainAfterExit=yes
 
 [Install]

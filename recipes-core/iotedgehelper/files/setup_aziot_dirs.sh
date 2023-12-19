@@ -1,14 +1,13 @@
 #!/bin/sh
-VARLIB_DIR=${VARLOCAL_DIR}/aziot
-VARLOCAL_DIR=/var/local/lib/aziot
-mkdir -p ${VARLIB_DIR}
-mkdir -p ${VARLOCAL_DIR}
-mkdir -p ${VARLOCAL_DIR}/{certd,keyd,identityd,tpmd,edged}
-chown -R iotedge:iotedge ${VARLOCAL_DIR}/aziot/edged/
-chown -R aziotcs:aziotcs ${VARLOCAL_DIR}/aziot/certd/
-chown -R aziotks:aziotks ${VARLOCAL_DIR}/aziot/keyd/
-chown -R aziotid:aziotid ${VARLOCAL_DIR}/aziot/identityd/
-chown -R aziottpm:aziottpm ${VARLOCAL_DIR}/aziot/tpmd
+
+VARLIB_DIR=/var/lib
+mkdir -p ${VARLIB_DIR}/aziot
+mkdir -p ${VARLIB_DIR}/{certd,keyd,identityd,tpmd,edged}
+chown -R iotedge:iotedge ${VARLIB_DIR}/aziot/edged/
+chown -R aziotcs:aziotcs ${VARLIB_DIR}/aziot/certd/
+chown -R aziotks:aziotks ${VARLIB_DIR}/aziot/keyd/
+chown -R aziotid:aziotid ${VARLIB_DIR}/aziot/identityd/
+chown -R aziottpm:aziottpm ${VARLIB_DIR}/aziot/tpmd
 
 chown -R iotedge:iotedge /etc/aziot/edged/
 chown -R aziotcs:aziotcs /etc/aziot/certd/

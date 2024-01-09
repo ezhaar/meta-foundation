@@ -1,16 +1,18 @@
 #!/bin/sh
 
 VARLIB_DIR=/var/lib
-mkdir -p ${VARLIB_DIR}/aziot
-mkdir -p ${VARLIB_DIR}/{certd,keyd,identityd,tpmd,edged}
-chown -R iotedge:iotedge ${VARLIB_DIR}/aziot/edged/
-chown -R aziotcs:aziotcs ${VARLIB_DIR}/aziot/certd/
-chown -R aziotks:aziotks ${VARLIB_DIR}/aziot/keyd/
-chown -R aziotid:aziotid ${VARLIB_DIR}/aziot/identityd/
-chown -R aziottpm:aziottpm ${VARLIB_DIR}/aziot/tpmd
+IOT_HOME=${VARLIB_DIR}/aziot
+IOT_CONFIG_DIR=/etc/aziot
+mkdir -p ${IOT_HOME}
+mkdir -p ${IOT_HOME}/{certd,keyd,identityd,tpmd,edged}
+chown -R iotedge:iotedge ${IOT_HOME}/edged/
+chown -R aziotcs:aziotcs ${IOT_HOME}/certd/
+chown -R aziotks:aziotks ${IOT_HOME}/keyd/
+chown -R aziotid:aziotid ${IOT_HOME}/identityd/
+chown -R aziottpm:aziottpm ${IOT_HOME}/tpmd
 
-chown -R iotedge:iotedge /etc/aziot/edged/
-chown -R aziotcs:aziotcs /etc/aziot/certd/
-chown -R aziotks:aziotks /etc/aziot/keyd/
-chown -R aziotid:aziotid /etc/aziot/identityd/
-chown -R aziottpm:aziottpm /etc/aziot/tpmd
+chown -R iotedge:iotedge ${IOT_CONFIG_DIR}/edged/
+chown -R aziotcs:aziotcs ${IOT_CONFIG_DIR}/certd/
+chown -R aziotks:aziotks ${IOT_CONFIG_DIR}/keyd/
+chown -R aziotid:aziotid ${IOT_CONFIG_DIR}/identityd/
+chown -R aziottpm:aziottpm ${IOT_CONFIG_DIR}/tpmd

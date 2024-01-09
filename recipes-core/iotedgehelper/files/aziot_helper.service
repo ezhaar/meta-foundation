@@ -1,7 +1,6 @@
 [Unit]
-Description=IoTEdge home mount /var/local/lib/aziot -> /var/lib/aziot.
+Description=Create IoT Edge home directories and set permissions
 DefaultDependencies=no
-Conflicts=umount.target
 After=local-fs.target
 
 [Service]
